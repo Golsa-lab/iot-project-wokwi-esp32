@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B0B0C"/><stop offset="1" stop-color="#1E0B12"/></linearGradient>
+    <style>
+      .b{fill:#151012;stroke:#8C1C3A;stroke-width:1.6}
+      .t{font-family:Helvetica,Arial,sans-serif;font-size:15px;fill:#FAF7F5;text-anchor:middle}
+      .m{font-family:Menlo,Consolas,monospace;font-size:12px;fill:#D8A7B1}
+      .p{font-family:Menlo,Consolas,monospace;font-size:12px;fill:#FAF7F5}
+      .h{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2px;fill:#FAF7F5;fill-opacity:.55}
+      .sig{fill:none;stroke:#F3DCE1;stroke-width:2.2}
+      .pwr{fill:none;stroke:#C0394F;stroke-width:2.2}
+      .gnd{fill:none;stroke:#6E6E73;stroke-width:2.2}
+      .pin{fill:#D8A7B1}
+    </style>
+  </defs>
+  <rect width="1000" height="420" rx="16" fill="url(#bg)"/>
+  <text x="30" y="34" class="h">WIRING  ·  diagram.json</text>
+
+  <!-- ESP32 board -->
+  <rect x="600" y="70" width="230" height="300" rx="12" fill="#5E1224" stroke="#D8A7B1" stroke-width="1.6"/>
+  <rect x="650" y="90" width="130" height="70" rx="6" fill="#0B0B0C" stroke="#8C1C3A"/>
+  <text class="t" x="715" y="122">ESP32</text>
+  <text class="m" x="715" y="142" text-anchor="middle">DevKitC v4</text>
+  <g class="p"><text x="616" y="204">GPIO 13</text><text x="616" y="244">GPIO 34</text><text x="616" y="294">3V3</text><text x="616" y="334">GND</text></g>
+  <g class="pin"><circle cx="600" cy="200" r="4"/><circle cx="600" cy="240" r="4"/><circle cx="600" cy="290" r="4"/><circle cx="600" cy="330" r="4"/></g>
+  <text class="m" x="700" y="204">digital in</text>
+  <text class="m" x="700" y="244">ADC1_CH6</text>
+  <!-- antenna -->
+  <path d="M780 70 v-24 h18 v14 h14 v-14 h18 v24" fill="none" stroke="#F3DCE1" stroke-width="1.6"/>
+  <text class="m" x="770" y="54" text-anchor="end">ESP-NOW broadcast → FF:FF:FF:FF:FF:FF</text>
+
+  <!-- PIR -->
+  <rect class="b" x="60" y="90" width="210" height="110" rx="10"/>
+  <circle cx="110" cy="145" r="28" fill="#0B0B0C" stroke="#D8A7B1" stroke-width="1.4"/>
+  <path d="M92 145a18 18 0 0 1 36 0" fill="none" stroke="#D8A7B1" stroke-opacity=".6"/>
+  <text class="t" x="200" y="132">PIR</text><text class="m" x="200" y="152" text-anchor="middle">motion</text>
+  <g class="p"><text x="280" y="134">OUT</text><text x="280" y="160">VCC</text><text x="280" y="186">GND</text></g>
+  <!-- LDR -->
+  <rect class="b" x="60" y="240" width="210" height="110" rx="10"/>
+  <g transform="translate(110,295)"><circle r="26" fill="#0B0B0C" stroke="#D8A7B1" stroke-width="1.4"/><path d="M-14 -6h6l4 12l4-12l4 12l4-12h6" fill="none" stroke="#F3DCE1" stroke-width="1.4"/></g>
+  <text class="t" x="200" y="282">LDR</text><text class="m" x="200" y="302" text-anchor="middle">light</text>
+  <g class="p"><text x="280" y="284">AO</text><text x="280" y="310">VCC</text><text x="280" y="336">GND</text></g>
+
+  <!-- wires -->
+  <path class="sig" d="M312 130 H450 V200 H596"/>
+  <path class="sig" d="M304 280 H470 V240 H596"/>
+  <path class="pwr" d="M314 156 H420 V290 H596"/>
+  <path class="pwr" d="M314 306 H420"/>
+  <path class="gnd" d="M314 182 H400 V330 H596"/>
+  <path class="gnd" d="M314 332 H400"/>
+  <g class="pin"><circle cx="420" cy="290" r="3.5"/><circle cx="420" cy="306" r="3.5"/><circle cx="400" cy="330" r="3.5"/><circle cx="400" cy="332" r="0"/></g>
+
+  <!-- legend -->
+  <g transform="translate(60,388)" class="m">
+    <path d="M0 0h26" class="sig"/><text x="34" y="4">signal</text>
+    <path d="M110 0h26" class="pwr"/><text x="144" y="4">3V3</text>
+    <path d="M200 0h26" class="gnd"/><text x="234" y="4">GND</text>
+  </g>
+</svg>

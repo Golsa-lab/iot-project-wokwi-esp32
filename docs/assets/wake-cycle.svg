@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B0B0C"/><stop offset="1" stop-color="#1E0B12"/></linearGradient>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V8" stroke="#D8A7B1" stroke-opacity=".18" stroke-width="3"/></pattern>
+    <style>
+      .t{font-family:Helvetica,Arial,sans-serif;font-size:14px;fill:#FAF7F5;text-anchor:middle}
+      .m{font-family:Menlo,Consolas,monospace;font-size:11px;fill:#D8A7B1;text-anchor:middle}
+      .k{font-family:Menlo,Consolas,monospace;font-size:12px;fill:#FAF7F5;text-anchor:middle}
+      .h{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2px;fill:#FAF7F5;fill-opacity:.55}
+      .tick{stroke:#F3DCE1;stroke-width:1.4}
+    </style>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <text x="30" y="34" class="h">ONE WAKE CYCLE  ·  EVERYTHING HAPPENS IN setup()  ·  NOT TO SCALE</text>
+
+  <rect x="40"  y="90" width="250" height="80" rx="8" fill="#5E1224" stroke="#D8A7B1" stroke-width="1.4"/>
+  <rect x="290" y="90" width="170" height="80" fill="#8C1C3A" stroke="#D8A7B1" stroke-width="1.4"/>
+  <rect x="460" y="90" width="230" height="80" fill="#5E1224" stroke="#D8A7B1" stroke-width="1.4"/>
+  <rect x="690" y="90" width="110" height="80" fill="#3A0D18" stroke="#D8A7B1" stroke-width="1.4"/>
+  <rect x="800" y="90" width="360" height="80" rx="8" fill="url(#hatch)" stroke="#6E6E73" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+  <text class="t" x="165" y="122">Initialisation</text>
+  <text class="m" x="165" y="142">Serial · WiFi STA · esp_now_init</text>
+  <text class="m" x="165" y="157">register cb · add broadcast peer</text>
+  <text class="t" x="375" y="122">Sense</text>
+  <text class="m" x="375" y="142">digitalRead(13)</text>
+  <text class="m" x="375" y="157">analogRead(34) → lux</text>
+  <text class="t" x="575" y="122">Transmit</text>
+  <text class="m" x="575" y="142">esp_now_send(payload)</text>
+  <text class="m" x="575" y="157">+ 200 ms for callback</text>
+  <text class="t" x="745" y="122">Report</text>
+  <text class="m" x="745" y="142">Δt via Serial</text>
+  <text class="m" x="745" y="157">flush()</text>
+  <text class="t" x="980" y="126" style="fill-opacity:.85">Deep sleep · 5.4 s</text>
+  <text class="m" x="980" y="146">RTC timer only · RAM lost → reboot into setup()</text>
+
+  <g class="tick"><path d="M40 80V190M290 80V190M460 80V190M690 80V190M800 80V190"/></g>
+  <g class="k"><text x="40" y="70">t0</text><text x="290" y="70">t1</text><text x="460" y="70">t2</text><text x="690" y="70">t3</text><text x="800" y="70">sleep</text></g>
+
+  <g class="m">
+    <text x="165" y="214">t1 − t0</text><text x="375" y="214">t2 − t1</text><text x="575" y="214">t3 − t2</text>
+  </g>
+  <path d="M1160 240 H40" fill="none" stroke="#D8A7B1" stroke-opacity=".5" stroke-dasharray="3 5"/>
+  <path d="M40 240 l8 -5 v10z" fill="#D8A7B1"/>
+  <text class="m" x="600" y="262" style="fill-opacity:.8">timer wake-up → ROM bootloader → setup() again  (loop() is never reached)</text>
+</svg>

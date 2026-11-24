@@ -1,37 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B0B0C"/><stop offset="0.62" stop-color="#1A0A0F"/><stop offset="1" stop-color="#5E1224"/>
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="0.62" stop-color="#FBF6F7"/><stop offset="1" stop-color="#F3E3E7"/>
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.04"/>
+      <path d="M40 0H0V40" fill="none" stroke="#000000" stroke-opacity="0.04"/>
     </pattern>
-    <radialGradient id="glow"><stop offset="0" stop-color="#D8A7B1" stop-opacity=".55"/><stop offset="1" stop-color="#D8A7B1" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#8C1C3A" stop-opacity=".55"/><stop offset="1" stop-color="#8C1C3A" stop-opacity="0"/></radialGradient>
   </defs>
-  <rect width="1200" height="320" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="18" fill="url(#bg)" stroke="#EAD0D6" stroke-width="2"/>
   <rect width="1200" height="320" rx="18" fill="url(#grid)"/>
   <!-- broadcast node -->
-  <g transform="translate(905,140)" fill="none" stroke="#D8A7B1">
+  <g transform="translate(905,140)" fill="none" stroke="#8C1C3A">
     <circle r="90" stroke-opacity=".12"/><circle r="64" stroke-opacity=".22"/><circle r="38" stroke-opacity=".4"/>
     <circle r="60" fill="url(#glow)" stroke="none"/>
-    <rect x="-16" y="-16" width="32" height="32" rx="5" fill="#5E1224" stroke="#F3DCE1" stroke-width="1.5"/>
-    <g stroke="#F3DCE1" stroke-width="1.5"><path d="M-10 -16v-6M0 -16v-6M10 -16v-6M-10 16v6M0 16v6M10 16v6M-16 -10h-6M-16 0h-6M-16 10h-6M16 -10h6M16 0h6M16 10h6"/></g>
+    <rect x="-16" y="-16" width="32" height="32" rx="5" fill="#F3E3E7" stroke="#5E1224" stroke-width="1.5"/>
+    <g stroke="#5E1224" stroke-width="1.5"><path d="M-10 -16v-6M0 -16v-6M10 -16v-6M-10 16v6M0 16v6M10 16v6M-16 -10h-6M-16 0h-6M-16 10h-6M16 -10h6M16 0h6M16 10h6"/></g>
   </g>
   <!-- wake / sleep pulse train -->
   <g transform="translate(640,262)">
-    <path d="M0 0H40V-26H62V0H190V-26H212V0H340V-26H362V0H520" fill="none" stroke="#F3DCE1" stroke-width="2" stroke-linejoin="round"/>
-    <g font-family="Menlo, Consolas, monospace" font-size="11" fill="#D8A7B1" fill-opacity=".85">
+    <path d="M0 0H40V-26H62V0H190V-26H212V0H340V-26H362V0H520" fill="none" stroke="#5E1224" stroke-width="2" stroke-linejoin="round"/>
+    <g font-family="Menlo, Consolas, monospace" font-size="11" fill="#8C1C3A" fill-opacity=".85">
       <g text-anchor="middle"><text x="51" y="18">wake</text><text x="126" y="18">sleep 5.4 s</text><text x="201" y="18">wake</text>
       <text x="276" y="18">sleep 5.4 s</text><text x="351" y="18">wake</text></g>
     </g>
   </g>
-  <g font-family="Georgia, 'Times New Roman', serif" fill="#FAF7F5">
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1A1D">
     <text x="60" y="122" font-size="52" letter-spacing="1">Sleepy Sensor Node</text>
-    <text x="62" y="162" font-size="22" font-style="italic" fill="#D8A7B1">an ESP32 that wakes, senses, whispers, and sleeps again</text>
+    <text x="62" y="162" font-size="22" font-style="italic" fill="#8C1C3A">an ESP32 that wakes, senses, whispers, and sleeps again</text>
   </g>
-  <g font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#FAF7F5" fill-opacity="0.75" letter-spacing="1.4">
+  <g font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1A1A1D" fill-opacity="0.75" letter-spacing="1.4">
     <text x="62" y="222">ESP32 · PIR + LDR · ESP-NOW BROADCAST · DEEP SLEEP</text>
   </g>
   <rect x="62" y="244" width="64" height="3" fill="#8C1C3A"/>
-  <text x="62" y="276" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#FAF7F5" fill-opacity="0.5" letter-spacing="1.5">ARDUINO · WOKWI SIMULATION · IOT CHALLENGE 1</text>
+  <text x="62" y="276" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1A1A1D" fill-opacity="0.5" letter-spacing="1.5">ARDUINO · WOKWI SIMULATION · IOT CHALLENGE 1</text>
 </svg>
